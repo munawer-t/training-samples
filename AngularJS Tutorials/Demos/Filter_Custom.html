@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<body>
+
+<h1>Custom Filter Sample</h1>
+
+<div ng-app="myApp">
+<p>Hey, whats your name? <input type="text" ng-model="name"></p>
+<p>Hi {{name | myFormat}}</p>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.filter('myFormat', function() {
+    return function(x) {
+        var i, c, txt = "Mr. ";
+        x = x.split("")
+        for (i = 0; i < x.length; i++) {
+            c = x[i];
+            if (i == 0) {
+                c = c.toUpperCase();
+            }
+            txt += c;
+        }
+        return txt;
+    };
+});
+</script>
+
+</body>
+</html>

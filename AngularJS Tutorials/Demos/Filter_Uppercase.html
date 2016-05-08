@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<body>
+
+<h1>Uppercase Filter Sample</h1>
+
+<div ng-app="myApp">
+<p>Hey, whats your name? <input type="text" ng-model="name"></p>
+<p>Hi {{ name | uppercase }}</p>
+</div>
+
+<script>
+angular.module('myApp', []);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+
+<head>
+<style>
+table {
+    border-collapse: collapse;
+    width: 60%;
+    margin-left: 20%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+
+
+<body ng-app="">
+
+<h1>Form Input Validation Demo</h1>
+
+<p>Try writing in the input field:</p>
+
+<form name="myForm">
+<input name="myInput" ng-model="myInput" required>
+<span style="color:red" ng-show="myForm.myInput.$error.required">You cannot leave the input field blank!</span>
+</form>
+
+<br>
+<br>
+
+<table>
+  <tr>
+    <th>State</th>
+    <th>Description</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>$untouched</td>
+    <td>The field has not been touched yet</td>
+    <td>{{myForm.myInput.$untouched}}</td>
+  </tr>
+  <tr>
+    <td>$touched</td>
+    <td>The field has been touched</td>
+    <td>{{myForm.myInput.$touched}}</td>
+  </tr>
+  <tr>
+    <td>$pristine</td>
+    <td>The field has not been modified yet</td>
+    <td>{{myForm.myInput.$pristine}}</td>
+  </tr>
+  <tr>
+    <td>$dirty</td>
+    <td>The field has been modified</td>
+    <td>{{myForm.myInput.$dirty}}</td>
+  </tr>
+  <tr>
+    <td>$invalid</td>
+    <td>The field content is not valid</td>
+    <td>{{myForm.myInput.$invalid}}</td>
+  </tr>
+  <tr>
+    <td>$valid</td>
+    <td>The field content is valid</td>
+    <td>{{myForm.myInput.$valid}}</td>
+  </tr>
+  <tr>
+    <td>$error.required</td>
+    <td>The field content is required</td>
+    <td>{{myForm.myInput.$error.required}}</td>
+  </tr>
+</table>
+
+</body>
+</html>
